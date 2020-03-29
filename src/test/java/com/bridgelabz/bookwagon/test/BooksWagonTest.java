@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 
 import com.bridgelabz.bookswagon.base.BaseTest;
 import com.bridgelabz.bookswagon.page.Homepage;
+import com.bridgelabz.bookswagon.page.LoginPage;
 
 public class BooksWagonTest extends BaseTest {
 
@@ -23,31 +24,60 @@ public class BooksWagonTest extends BaseTest {
 	}
 
  
-@Test(priority=1)
-public static void WhenTypeAuthorAndBookName_ShouldReturnBooklist() {
- Homepage searchBook= new Homepage(driver);
- searchBook.searchBar("Ravinder Singh");
- searchBook.buttonClick();
- }
+@Test
+public static void WhenTypeAuthorAndBookName_ShouldReturnBooklist()throws AWTException, InterruptedException {
+	 
 
-@Test(priority=2)
-public static void addedBook() throws AWTException {
-	Homepage addBook=new Homepage(driver);
+LoginPage login=new LoginPage(driver);
+Homepage addBook= new Homepage(driver);
+
+//
+//login.custom();
+//login.mail("sonamsingh1528@gmail.com");
+//Thread.sleep(100);
+//
+//login.password("9431603863");
+//login.login();
+//Thread.sleep(1000);
+//
+// addBook.searchBar("Ravinder Singh");
+// login.password("9431603863");
+
+ addBook.searchBar("Ravinder Singh");
+ addBook.onClick();
+
+ 
 	addBook.findBook();
-	addBook.buttonClick();
+	addBook.onClick();
+	
 	addBook.buyNow();
-	addBook.buttonClick();
-	addBook.quantity();
-//driver.findElement(By.xpath("//input[@name=\"BookCart$lvCart$imgPayment\"]")).click();
+	Thread.sleep(5000);
+	addBook.onClick();
+	
+	
+	addBook.PlaceOrder();
+	addBook.onClick();
+	login.custom();
+	login.mail("sonamsingh1528@gmail.com");
+	Thread.sleep(100);
 
+	login.password("9431603863");
+	login.login();
+	Thread.sleep(1000);
+
+	
+	addBook.ContinueShopping();
+	addBook.onClick();
+
+	
+	
 
 	
 }
 
 @AfterClass
-public void close()throws InterruptedException {
-	Thread.sleep(5000);
-	//driver.close();
+public void close()  {
+	driver.close();
 }
 
 
