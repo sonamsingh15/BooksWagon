@@ -8,11 +8,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class BaseTest {
+public class Base {
 	
 	 public static WebDriver driver=null;
 	
-	public static void initialize() {
+	public static void Initialize() {
+		
 		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
 		
@@ -31,7 +32,8 @@ public class BaseTest {
 		String title = driver.getTitle();
 		System.out.println("Window handle id of page -->"+ title +" --> is : "+windowHandle);
 		}
-		}}
+		}
+	}
 
 
 		

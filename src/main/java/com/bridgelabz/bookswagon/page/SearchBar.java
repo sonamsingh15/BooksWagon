@@ -1,13 +1,17 @@
 package com.bridgelabz.bookswagon.page;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.bridgelabz.bookswagon.base.BaseTest;
+import com.bridgelabz.bookswagon.base.Base;
 
-public class SearchBar extends BaseTest{
+public class SearchBar extends Base{
 public static WebDriver driver;
 	
 	public SearchBar(WebDriver driver) {
@@ -27,8 +31,11 @@ public static WebDriver driver;
  searchBar.sendKeys(element);	
  }
 
-public void onClick() {
-clicked.click();
+public void onClick()throws AWTException {
+	Robot robot=new Robot();
+	robot.keyPress(KeyEvent.VK_ENTER);
+	robot.keyRelease(KeyEvent.VK_ENTER);
+	
 }
 
 }

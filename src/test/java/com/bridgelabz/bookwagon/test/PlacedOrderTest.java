@@ -5,22 +5,22 @@ import java.awt.AWTException;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.bridgelabz.bookswagon.base.BaseTest;
+import com.bridgelabz.bookswagon.base.Base;
 import com.bridgelabz.bookswagon.page.PlacedOrder;
 
-public class PlacedOrderTest extends BaseTest {
+public class PlacedOrderTest extends Base {
 	
 	
 	@BeforeClass
-	public void setup() {
-	initialize();
+	public void SetUp() {
+	Initialize();
 	}
 
  
 @Test
-public static void BookPlaceOrder() throws AWTException,InterruptedException{
+public static void givenAuthorName_whenSearchBook_ShouldReturnThisBook() throws AWTException,InterruptedException{
 	BuyBookTest buynow=new BuyBookTest();
-	buynow.buyNow();
+	BuyBookTest.buyNow();
 	
 	PlacedOrder orderplaced=new PlacedOrder();
 	orderplaced.PlaceOrder();

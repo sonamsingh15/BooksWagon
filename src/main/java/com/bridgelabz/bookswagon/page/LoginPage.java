@@ -46,14 +46,7 @@ public class LoginPage {
 	
 	}
 	public void login() throws AWTException,InterruptedException {
-		//driver.get("https://connect.facebook.net/signals/config/963219683834125?v=2.9.15&r=stable");
-		//driver.get("https://bid.g.doubleclick.net/xbbe/pixel?d=KAE");
-		//driver.findElement(By.xpath("//input[@value='Login']))
 		
-		//WebElement My_frame=driver.findElement(By.xpath("//iframe[@id='fHcrjQV-1585490864284']"));
-		//driver.switchTo().frame(My_frame);
-		
-		driver.findElement(By.xpath("//input[@id='ctl00_phBody_SignUp_btnSubmit']")).click();
 		Robot robot = new Robot();
 		robot.mouseMove(193, 414);
 		robot.keyPress(KeyEvent.VK_ENTER);
@@ -62,7 +55,6 @@ public class LoginPage {
 		
 		
 		
-		//login.submit();
-	
+		
 }
 }

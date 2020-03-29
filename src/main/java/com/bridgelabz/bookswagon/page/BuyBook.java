@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.bridgelabz.bookswagon.base.BaseTest;
+import com.bridgelabz.bookswagon.base.Base;
 
-public class BuyBook extends BaseTest{
+public class BuyBook extends Base{
 public static WebDriver driver;
 	
 	public BuyBook(WebDriver driver) {
@@ -24,7 +24,7 @@ public static WebDriver driver;
  @FindBy(id="ctl00_TopSearch1_Button1")
  WebElement clicked;
  
-  public void BookName() {
+  public void bookName() {
 	bookName.click();
 	 	
 	 }
@@ -33,6 +33,8 @@ public static WebDriver driver;
 	 }
 	 
 	 public void onClick() {
+		 
+		 
 		 clicked.click();
 	 }
 }

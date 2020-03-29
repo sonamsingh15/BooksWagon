@@ -12,15 +12,15 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.bridgelabz.bookswagon.base.BaseTest;
+import com.bridgelabz.bookswagon.base.Base;
 import com.bridgelabz.bookswagon.page.Homepage;
 import com.bridgelabz.bookswagon.page.LoginPage;
 
-public class BooksWagonTest extends BaseTest {
+public class BooksWagonTest extends Base {
 
 @BeforeClass
-	public void setup() {
-	initialize();
+	public void Setup() {
+	Initialize();
 	}
 
  
@@ -28,10 +28,14 @@ public class BooksWagonTest extends BaseTest {
 public static void WhenTypeAuthorAndBookName_ShouldReturnBooklist()throws AWTException, InterruptedException {
 	 
 
-LoginPage login=new LoginPage(driver);
+LoginTest login=new LoginTest();
+login.givenLoginPage_WhenEnterTheLoginDetail_ShouldLoginSuccessful();
+
+
+
 Homepage addBook= new Homepage(driver);
 
-//
+
 //login.custom();
 //login.mail("sonamsingh1528@gmail.com");
 //Thread.sleep(100);
@@ -39,10 +43,8 @@ Homepage addBook= new Homepage(driver);
 //login.password("9431603863");
 //login.login();
 //Thread.sleep(1000);
-//
-// addBook.searchBar("Ravinder Singh");
-// login.password("9431603863");
 
+ 
  addBook.searchBar("Ravinder Singh");
  addBook.onClick();
 
@@ -57,17 +59,12 @@ Homepage addBook= new Homepage(driver);
 	
 	addBook.PlaceOrder();
 	addBook.onClick();
-	login.custom();
-	login.mail("sonamsingh1528@gmail.com");
-	Thread.sleep(100);
+	
 
-	login.password("9431603863");
-	login.login();
-	Thread.sleep(1000);
 
 	
 	addBook.ContinueShopping();
-	addBook.onClick();
+	Thread.sleep(5000);
 
 	
 	
