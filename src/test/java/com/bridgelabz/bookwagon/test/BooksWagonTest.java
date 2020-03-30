@@ -25,50 +25,45 @@ public class BooksWagonTest extends Base {
 
  
 @Test
-public static void WhenTypeAuthorAndBookName_ShouldReturnBooklist()throws AWTException, InterruptedException {
-	 
+public static void WhenUserTypeAuthorAndBookName_ShouldAbleToPlaceOrder()throws AWTException, InterruptedException {
 
 LoginTest login=new LoginTest();
 login.givenLoginPage_WhenEnterTheLoginDetail_ShouldLoginSuccessful();
 
 
-
 Homepage addBook= new Homepage(driver);
-
-
-//login.custom();
-//login.mail("sonamsingh1528@gmail.com");
-//Thread.sleep(100);
-//
-//login.password("9431603863");
-//login.login();
-//Thread.sleep(1000);
-
- 
- addBook.searchBar("Ravinder Singh");
+addBook.searchBar("Ravinder Singh");
  addBook.onClick();
 
- 
-	addBook.findBook();
+//user search by author name 
+	addBook.searchBookByName();
+	Thread.sleep(100);
 	addBook.onClick();
-	
+
+//click to buy 
 	addBook.buyNow();
 	Thread.sleep(5000);
 	addBook.onClick();
 	
-	
+//order place	
 	addBook.PlaceOrder();
 	addBook.onClick();
 	
-
-
-	
 	addBook.ContinueShopping();
 	Thread.sleep(5000);
-
+ 
+	addBook.recipitienName("sonamsingh");
+	addBook.nameOfComapany("Bridgelabz");
+	addBook.streetAddress("vashi sector 3, navi mumbai ");
+	addBook.enterCityName("Mumbai");
+	addBook.enterPinCode("400706");
+	addBook.enterphoneNumber("8084845315");
 	
-	
-
+	addBook.sameAddress();
+	addBook.saveAndContinue();
+	Thread.sleep(100);
+	addBook.payment();
+    Thread.sleep(1000);
 	
 }
 

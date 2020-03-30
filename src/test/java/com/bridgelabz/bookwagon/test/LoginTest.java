@@ -18,13 +18,12 @@ public class LoginTest extends Base{
 	@Test
 	public static void givenLoginPage_WhenEnterTheLoginDetail_ShouldLoginSuccessful() throws AWTException, InterruptedException {
 		LoginPage customer=new LoginPage(driver);
-		customer.custom();
+		customer.existingCustomers();
 		customer.mail("sonamsingh1528@gmail.com");
 		Thread.sleep(1000);
 		customer.password("9431603863");
 		customer.login();
-		
-		
+			
 	}
 	
 	}

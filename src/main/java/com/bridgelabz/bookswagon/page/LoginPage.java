@@ -23,16 +23,15 @@ public class LoginPage {
 	@FindBy(xpath ="//input[@id='ctl00_phBody_SignIn_txtEmail']")
         WebElement emailId;
 
-        @FindBy(xpath = "//input[@id='ctl00_phBody_SignIn_txtPassword']")
-        WebElement pwsdNumber;
+     @FindBy(xpath = "//input[@id='ctl00_phBody_SignIn_txtPassword']")
+      WebElement pwsdNumber;
 
         
-     
-        @FindBy(xpath ="//div[@id='ctl00_divLogin']")
+       @FindBy(xpath ="//div[@id='ctl00_divLogin']")
         WebElement optionTologin;
 	
      
-       public void custom() {
+       public void existingCustomers() {
     	optionTologin.click();
 		
 	}    
@@ -57,4 +56,6 @@ public class LoginPage {
 		
 		
 }
-}
+		
+	}
+

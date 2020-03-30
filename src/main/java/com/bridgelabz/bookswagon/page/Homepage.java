@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import java.util.List;
 import java.util.Set;
 
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
@@ -132,5 +133,102 @@ public void ContinueShopping() {
 public void quantity() throws AWTException {
  
 }
+//------------------------
+@FindBy(xpath ="//input[@id='ctl00_cpBody_txtNewRecipientName']")
+WebElement recpName;
 
+@FindBy(id="ctl00_cpBody_txtNewCompanyName")
+WebElement comapanyName;
+
+@FindBy(name="ctl00$cpBody$txtNewAddress")
+WebElement streetAddress;
+//----------------
+
+//droupdown country-------------------
+
+
+@FindBy(xpath="//div[@class='sortddl4']")
+WebElement dropdownCountrylist;
+
+@FindBy(xpath="//option[@value='113']")
+WebElement country;
+
+//------------droupbownstate
+@FindBy(xpath="//select[@id='ctl00_cpBody_ddlNewState']")
+WebElement dropdownStateList;
+
+@FindBy(xpath="//option value='BR']")
+WebElement state;
+//<option value="BR">Bihar</option>
+
+@FindBy(id="ctl00_cpBody_txtNewCity")
+WebElement cityName;
+
+@FindBy(id="ctl00_cpBody_txtNewPincode")
+WebElement pinNumber;
+
+@FindBy(id="ctl00_cpBody_txtNewPhone")
+WebElement phoneNumber;
+
+
+
+public void recipitienName(String name) {
+	recpName.sendKeys(name);
+	
 }
+public void nameOfComapany(String name) {
+	comapanyName.sendKeys(name);
+	
+}
+public void streetAddress(String address) {
+	streetAddress.sendKeys(address);
+	
+	
+}
+public void selectCountry() throws InterruptedException{
+	dropdownCountrylist.click();
+	 Select select=new Select(country);
+     select.selectByVisibleText("India");
+     Thread.sleep(2000);
+}
+public void selectState() throws InterruptedException{
+	dropdownStateList.click();
+	 Select dropdownStateList=new Select(state);
+	 dropdownStateList.selectByVisibleText("Bihar");
+    // select.selectByIndex();
+     Thread.sleep(2000);
+}
+public void enterCityName(String city) {
+	cityName.sendKeys(city);
+	
+}
+public void enterPinCode(String pin) {
+	pinNumber.sendKeys(pin);
+}
+public void enterphoneNumber(String number) {
+	phoneNumber.sendKeys(number);
+	
+}
+
+@FindBy(id="ctl00_cpBody_lvCustomerAdd_ctrl1_imgUseAddress")
+WebElement checkbox;
+
+@FindBy(id="ctl00_cpBody_ShoppingCart_lvCart_savecontinue")
+WebElement saveContinue;
+
+@FindBy(id="ctl00_cpBody_btnCCAvenue")
+WebElement payNow;
+
+public void sameAddress() {
+	checkbox.click();
+}
+public void saveAndContinue() {
+	saveContinue.click();
+}
+public void payment() {
+	payNow.click();
+	
+}
+	
+}
+
